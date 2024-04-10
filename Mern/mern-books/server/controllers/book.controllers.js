@@ -17,7 +17,7 @@ const getAllBooks = async (req, res) => {
   } catch (error) {
     console.log(error)
     res.status(400).json(error)
-    
+
   }
 }
 
@@ -33,34 +33,34 @@ const getBookByID = async (req, res) => {
 
 const updateBook = async (req, res) => {
   const options = {
-    new : true,
+    new: true,
     runValidators: true
   }
   try {
-    const updatedBook = await Book.findByIdAndUpdate(req.params.id, req.body , options)
+    const updatedBook = await Book.findByIdAndUpdate(req.params.id, req.body, options)
     res.json(updatedBook)
   } catch (error) {
     console.log(error)
     res.status(400).json(error)
-    
+
   }
 }
 
 const deleteBook = async (req, res) => {
   try {
-    const deletedBook = await Book.findOneAndDelete(req.params.id)
+    const deletedBook = await Book.findByIdAndDelete(req.params.id)
     res.json(deletedBook)
   } catch (error) {
     console.log(error)
     res.status(400).json(error)
-    
+
   }
 }
 
-export{
+export {
   createBook,
   getAllBooks,
   getBookByID,
   updateBook,
-  deleteBook 
+  deleteBook
 }
