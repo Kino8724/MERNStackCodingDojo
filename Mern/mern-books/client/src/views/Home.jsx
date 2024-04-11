@@ -35,7 +35,7 @@ const Home = (props) => {
               <td>{book.title}</td>
               <td>{book.author}</td>
               <td>{book.pages}</td>
-              <td>{book.isAvailable ? "Yes" : "No"}</td>
+              <td>{book.isAvailable ? "Yes" : "No"} | <Link to={`books/${book._id}/update`}>Edit</Link></td>
               <td><Link className="btn btn-success btn-sm" to={`books/${book._id}/details`}>Book Details</Link></td>
             </tr>
           )

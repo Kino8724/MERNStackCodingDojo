@@ -4,6 +4,7 @@ import './App.css'
 import BookDetails from './views/BookDetails'
 import Header from './components/Header'
 import CreateBook from './views/CreateBook'
+import UpdateBook from './views/UpdateBook'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path='/books/:id/details' element={<BookDetails />} />
         <Route path='/create' element={<CreateBook />} />
+        <Route path='/books/:id/update' element={<UpdateBook />} />
       </Routes>
     </>
   )
